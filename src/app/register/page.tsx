@@ -50,7 +50,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#202124]">
+    <main className="min-h-screen flex items-center justify-center bg-[#e5e5e5]">
       <motion.form
         onSubmit={handleSubmit}
         initial={{ opacity: 0, y: 30 }}
