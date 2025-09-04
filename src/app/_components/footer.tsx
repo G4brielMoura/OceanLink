@@ -44,7 +44,7 @@ export default function Footer() {
         {/* Esquerda: Logo, Redes e Copyright */}
         <div className="space-y-6 flex-1">
           <div className="flex items-center text-[#0a3d62] text-lg font-semibold">
-            <span className="text-2xl">@</span>gabrielmoura.com
+            <span className="text-2xl">@</span>oceanlinkwork.com
           </div>
 
           <div className="flex gap-4">
