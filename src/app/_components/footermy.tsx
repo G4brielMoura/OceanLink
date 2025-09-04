@@ -97,10 +97,13 @@ export default function FooterMy() {
             Suporte
           </h2>
 
-          <form className="space-y-6"   ref={formRef} onSubmit={handleSubmit}>
+          <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
             <Input label="Digite seu nome." name="user_name" />
             <Input label="Seu melhor email." name="user_email" />
-            <TextArea label="Fale comigo." name="message" />
+            <TextArea
+              label="Fale com nosso time, estamos aqui para ajudar."
+              name="message"
+            />
             <div className="relative ">
               <motion.button
                 className="bg-[#0a3d62] hover:bg-[#1e81c8]/90 text-[#f5f5f5] hover:text-white px-6 py-3 rounded-full transition-colors w-full sm:w-auto"

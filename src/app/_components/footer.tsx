@@ -29,6 +29,7 @@ const navLinks = [
   { label: "SERVIÇOS", href: "/skills" },
   { label: "SUPORTE", href: "/contato" },
   { label: "CONTA", href: "/projetos" },
+  
   // Exemplo adicional: { label: "ROOM", href: "/room" },
 ]
 
