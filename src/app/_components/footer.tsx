@@ -39,7 +39,7 @@ export default function Footer() {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="bg-[#e5e5e5] text-[#0a3d62] px-6 sm:px-12 "
+      className="bg-[#e5e5e5] p-20 text-[#0a3d62] px-6 sm:px-12 "
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
         {/* Esquerda: Logo, Redes e Copyright */}

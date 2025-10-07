@@ -3,16 +3,6 @@
 import { motion, useAnimation, useInView, Variants } from "framer-motion"
 import { useEffect, useRef } from "react"
 
-const softSkills = [
- { title: "Cadastro profissional" },
-  { title: "Emissão e renovação" },
-  { title: "Monitoramento" },
-  { title: "Normas ambientais" },
-  { title: "Suporte" },
-  { title: "Acompanhamento" },
-
- 
-]
 
 const hardSkills = [
   { title: "Cadastro oficial" },
@@ -60,7 +50,7 @@ const Section = ({
   return (
     <section
       ref={ref}
-      className="w-full mt-30 select-none overflow-x-hidden py-8 md:py-2 px-4 sm:px-6 lg:px-20"
+      className="w-full mt-60 select-none overflow-x-hidden py-8 md:py-2 px-4 sm:px-6 lg:px-20"
     >
       <div className="max-w-5xl mx-auto mb-6">
         <motion.h2
@@ -107,17 +97,8 @@ const Section = ({
 
 const SoftSkill = () => {
   return (
-    <div className="bg-[#e5e5e5] w-full select-none">
-      <Section
-        title="Pescadores"
-        description="A pesca é tradição, cultura e sustento para milhares de famílias. A Ocealink reconhece o valor dos pescadores."
-        skills={softSkills}
-        isSoft
-      />
-      <div className="max-w-5xl mx-auto">
-        {/* espaço reduzido entre sections para mobile, ligeiramente maior em desktop */}
-        <div className="h-2 md:h-4" />
-      </div>
+    <div className="bg-[#e5e5e5] w-full mb-30 select-none">
+    
       <Section
         title="Travessantes"
         description="Os travessantes são responsáveis por transportar pessoas e cargas com segurança através de rios e mares."

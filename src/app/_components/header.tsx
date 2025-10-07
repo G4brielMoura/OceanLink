@@ -10,13 +10,12 @@ import Image from "next/image"
 const links = [
   { href: "/", label: "HOME" },
   { href: "/about", label: "QUEM SOMOS" },
-  { href: "/skills", label: "SERVIÇOS" },
+  { href: "/skills", label: "SERVIÇOS & PRODUTOS" },
   { href: "/contato", label: "SUPORTE" },
-  { href: "/projetos", label: "CONTA" },
+  { href: "/catalogo", label: "CATÁLOGO" },
 
   // 🔑 Novas rotas de autenticação
   { href: "/login", label: "LOGIN" },
-  { href: "/register", label: "REGISTRO" },
   { href: "/dashboard", label: "DASHBOARD" },
 ]
 
