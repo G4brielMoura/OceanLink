@@ -3,14 +3,13 @@
 import { motion, useAnimation, useInView, Variants } from "framer-motion"
 import { useEffect, useRef } from "react"
 
-
 const hardSkills = [
-  { title: "Cadastro oficial"},
-  { title: "Catálogo de Espécie"},
-  { title: "Gestão de horários"},
-  { title: "Suporte técnico"},
-  { title: "OceanLink Company"},
-  { title: "Informações"},
+  { title: "Cadastro oficial" },
+  { title: "Catálogo de Espécie" },
+  { title: "Gestão de horários" },
+  { title: "Suporte técnico" },
+  { title: "OceanLink Company" },
+  { title: "Informações" },
 ]
 
 const fadeInVariant = (direction: "left" | "right"): Variants => ({
@@ -50,7 +49,7 @@ const Section = ({
   return (
     <section
       ref={ref}
-      className="w-full mt-60 select-none overflow-x-hidden py-8 md:py-2 px-4 sm:px-6 lg:px-20"
+      className="w-full mt-20 sm:mt-28 md:mt-40 select-none overflow-x-hidden py-8 md:py-2 px-4 sm:px-6 lg:px-20"
     >
       <div className="max-w-5xl mx-auto mb-6">
         <motion.h2
