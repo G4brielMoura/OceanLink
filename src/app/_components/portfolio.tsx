@@ -122,7 +122,8 @@ export default function Portfolio() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.8 }}
-        className="w-full py-10 px-6 bg-[#e5e5e5] text-[#0a3d62] md:pt-45"
+        className="w-full bg-[#e5e5e5] text-[#0a3d62] px-6 
+             pt-24 sm:pt-20 md:pt-45 py-10"
       >
         <div className="max-w-screen-xl select-none mx-auto flex flex-col items-center">
           <motion.div
@@ -130,8 +131,7 @@ export default function Portfolio() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full flex flex-col md:flex-row justify-between items-center "
-          >
-          </motion.div>
+          ></motion.div>
 
           <div className="flex flex-col gap-32 w-full">
             {cases.map((item, index) => (
