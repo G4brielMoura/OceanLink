@@ -7,8 +7,7 @@ import { compare } from "bcryptjs"
 
 const prisma = new PrismaClient()
 
-// ✅ Define o tipo explicitamente como AuthOptions
-export const authOptions: AuthOptions = {
+const authOptions: AuthOptions = {
   providers: [
     // 👇 Login com Google
     GoogleProvider({
@@ -51,7 +50,6 @@ export const authOptions: AuthOptions = {
   },
 
   session: {
-    // ⚠️ Aqui é onde o TS reclamava. O tipo correto é "strategy: 'jwt'"
     strategy: "jwt",
   },
 
@@ -59,5 +57,4 @@ export const authOptions: AuthOptions = {
 }
 
 const handler = NextAuth(authOptions)
-
 export { handler as GET, handler as POST }
