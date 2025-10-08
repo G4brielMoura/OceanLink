@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client"
 import { compare } from "bcryptjs"
-import { AuthOptions } from "next-auth"
+import type { AuthOptions } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import CredentialsProvider from "next-auth/providers/credentials"
 
@@ -27,28 +27,20 @@ export const authOptions: AuthOptions = {
           where: { email: credentials.email },
         })
 
-        if (!user) {
-          throw new Error("Usuário não encontrado")
-        }
+        if (!user) throw new Error("Usuário não encontrado")
 
         const senhaValida = await compare(
           credentials.password,
           user.hashedPassword || ""
         )
 
-        if (!senhaValida) {
-          throw new Error("Senha incorreta")
-        }
+        if (!senhaValida) throw new Error("Senha incorreta")
 
         return user
       },
     }),
   ],
-  session: {
-    strategy: "jwt",
-  },
-  pages: {
-    signIn: "/login",
-  },
+  session: { strategy: "jwt" },
+  pages: { signIn: "/login" },
   secret: process.env.NEXTAUTH_SECRET,
 }
