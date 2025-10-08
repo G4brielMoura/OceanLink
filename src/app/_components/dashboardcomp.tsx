@@ -187,7 +187,7 @@ const Sidebar: React.FC = () => {
 
       {/* Menu Mobile */}
       <div className="md:hidden fixed top-0 left-0 w-full bg-[#0a3d62] text-white z-50 flex items-center justify-between px-5 py-3 shadow-md">
-        <h2 className="text-lg font-bold">⚓ Painel da Pesca</h2>
+        <h2 className="text-lg font-bold">OceanLink Company</h2>
         <button onClick={() => setIsOpen(!isOpen)} aria-label="Abrir menu">
           {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
         </button>
