@@ -4,14 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import {
-  SiTailwindcss,
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiFigma,
-} from "react-icons/si"
-import type { JSX } from "react"
+
 
 type CaseData = {
   title: string
@@ -30,20 +23,95 @@ type CaseProps = CaseData & {
 
 const cases: CaseData[] = [
   {
-    title: "HYBRID PORTFÓLIO",
+    title: "Camarão",
     description:
-      "O Hybrid Portfolio é uma experiência interativa única que combina dois mundos: design e desenvolvimento. Com um único clique, você alterna entre as versões do portfólio — cada modo apresenta conteúdos, projetos, timelines e experiências personalizadas de acordo com a perspectiva escolhida.",
+      "Símbolo das marés maranhenses, o camarão é um dos principais produtos da pesca e exportação. Presente em pratos tradicionais, é fonte de sustento para inúmeras famílias de pescadores e travessantes.",
     tag: "Portfólio Profissional",
-    images: [
-      "/project/hybrid1.jpg",
-      "/project/hybrid2.jpg",
-      "/project/hybrid3.jpg",
-    ],
-    link: "https://hybridgraphicdesignanddevelopmentportfolio.vercel.app/",
-    pronto: true,
-    techs: ["tailwind", "nextjs", "react", "typescript", "figma"],
-  },
+    images: ["/project/cam1.svg", "/project/cam2.svg", "/project/cam3.svg"],
 
+    pronto: true,
+  },
+  {
+    title: "Pescada-Amarela",
+    description:
+      "Peixe nobre e muito apreciado na culinária maranhense, a pescada-amarela possui carne branca, macia e sabor suave. É uma das espécies mais pescadas na costa do estado e muito valorizada tanto no mercado local quanto na exportação.",
+    tag: "Portfólio Profissional",
+    images: ["/project/pes1.svg", "/project/pes2.svg", "/project/pes3.svg"],
+
+    pronto: true,
+  },
+  {
+    title: "Pargo",
+    description:
+      "Conhecido por sua cor avermelhada e carne firme, o pargo é bastante procurado em restaurantes e feiras. Sua pesca é tradicional entre os pescadores maranhenses, que dominam as melhores épocas e pontos para capturá-lo.",
+    tag: "Portfólio Profissional",
+    images: ["/project/rose1.svg", "/project/rose2.svg", "/project/rose3.svg"],
+
+    pronto: true,
+  },
+  {
+    title: "Cavala",
+    description:
+      "De corpo alongado e sabor marcante, a cavala é ideal para grelhados e defumados. É uma espécie comum nas águas costeiras do Maranhão e tem grande importância econômica para os pescadores e travessantes.",
+    tag: "Portfólio Profissional",
+    images: ["/project/cav1.svg", "/project/cav2.svg", "/project/cav3.svg"],
+
+    pronto: true,
+  },
+  {
+    title: "Tainha",
+    description:
+      "Peixe de escamas prateadas e carne saborosa, a tainha é encontrada em abundância nas regiões litorâneas. Além do consumo fresco, suas ovas são consideradas uma iguaria em várias partes do Brasil.",
+    tag: "Portfólio Profissional",
+    images: ["/project/tai1.svg", "/project/tai2.svg", "/project/tai3.svg"],
+
+    pronto: true,
+  },
+  {
+    title: "Serra",
+    description:
+      "Ágil e forte, o peixe-serra é famoso pelo sabor intenso e por ser muito utilizado em pratos típicos e peixadas maranhenses. É um dos preferidos dos pescadores por seu valor comercial.",
+    tag: "Portfólio Profissional",
+    images: ["/project/serr1.svg", "/project/serr2.svg", "/project/serr3.svg"],
+
+    pronto: true,
+  },
+  {
+    title: "Cação",
+    description:
+      "Espécie de pequeno tubarão, o cação é amplamente consumido na culinária local. Sua carne firme é usada em moquecas, ensopados e grelhados, sendo um produto constante nas feiras de peixe da região.",
+    tag: "Portfólio Profissional",
+    images: ["/project/tub1.svg", "/project/tub2.svg", "/project/tub3.svg"],
+
+    pronto: true,
+  },
+  {
+    title: "Carapeba",
+    description:
+      "Peixe de pequeno porte, muito presente nas águas rasas e manguezais maranhenses. Apesar do tamanho, tem grande aceitação pelo sabor e pela textura delicada da carne.",
+    tag: "Portfólio Profissional",
+    images: ["/project/cara1.svg", "/project/cara2.svg", "/project/cara3.svg"],
+
+    pronto: true,
+  },
+  {
+    title: "Corvina",
+    description:
+      "Com corpo prateado e carne de sabor suave, a corvina é uma das preferidas tanto dos consumidores quanto dos travessantes. É bastante encontrada na costa maranhense e muito usada em pratos tradicionais como caldeiradas e moquecas.",
+    tag: "Portfólio Profissional",
+    images: ["/project/cov1.svg", "/project/cov2.svg", "/project/cov3.svg"],
+
+    pronto: true,
+  },
+  {
+    title: "Bagre",
+    description:
+      "Muito conhecido nas águas do Maranhão, o bagre-prata é um peixe de carne branca e textura delicada, apreciado em várias receitas típicas. Além do consumo local, é amplamente comercializado e representa importante fonte de renda para as comunidades pesqueiras da região.",
+    tag: "Portfólio Profissional",
+    images: ["/project/bagre1.svg", "/project/bagre2.svg", "/project/bagre3.svg"],
+
+    pronto: true,
+  },
 ]
 
 export default function Portfolio() {
@@ -63,13 +131,6 @@ export default function Portfolio() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full flex flex-col md:flex-row justify-between items-center "
           >
-            <h1 className="text-4xl select-none text-[#0a3d62] text-left mb-4 tracking-tight mt-20 font-semibold w-full md:text-5xl block md:hidden">
-              Portfólio
-            </h1>
-            <p className="text-base md:text-lg pb-7 text-gray-400 max-w-2xl select-none leading-relaxed w-full block md:hidden">
-              Projetos desenvolvidos com foco em usabilidade, performance e
-              design funcional.
-            </p>
           </motion.div>
 
           <div className="flex flex-col gap-32 w-full">
@@ -94,7 +155,6 @@ function CaseComponent({
   images,
   reverse,
   link,
-  techs = [],
   pronto,
 }: CaseProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -106,23 +166,7 @@ function CaseComponent({
     return () => clearInterval(interval)
   }, [images.length])
 
-  const iconMap: Record<string, JSX.Element> = {
-    tailwind: (
-      <SiTailwindcss className="text-gray-300 hover:text-[#38BDF8] transition-all duration-300 ease-in-out" />
-    ),
-    nextjs: (
-      <SiNextdotjs className="text-gray-300 hover:text-gray-600 transition-all duration-300 ease-in-out" />
-    ),
-    react: (
-      <SiReact className="text-gray-300 hover:text-[#61DBFB] transition-all duration-300 ease-in-out" />
-    ),
-    typescript: (
-      <SiTypescript className="text-gray-300 hover:text-[#3178C6] transition-all duration-300 ease-in-out" />
-    ),
-    figma: (
-      <SiFigma className="text-gray-300 hover:text-[#272727] transition-all duration-300 ease-in-out" />
-    ),
-  }
+  
 
   return (
     <motion.div
@@ -176,30 +220,8 @@ function CaseComponent({
           {description}
         </p>
 
-        <Link
-          href={pronto ? link ?? "/" : "/maintenance"}
-          target={pronto ? "_blank" : "_self"}
-          rel="noopener noreferrer"
-          className="mb-4 inline-block w-fit px-6 py-2 bg-white text-black font-semibold rounded-full text-sm transition hover:scale-105 hover:bg-gray-200"
-        >
-          {pronto ? "Ver Projeto" : "Em Manutenção"}
-        </Link>
+        
 
-        {techs.length > 0 && (
-          <div className="flex gap-4 mt-2 text-2xl">
-            {techs.map((tech) => (
-              <motion.div
-                key={tech}
-                title={tech.toUpperCase()}
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="cursor-pointer"
-              >
-                {iconMap[tech]}
-              </motion.div>
-            ))}
-          </div>
-        )}
       </div>
     </motion.div>
   )

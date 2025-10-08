@@ -1,18 +1,11 @@
-// src/app/layout.tsx
-
+import "leaflet/dist/leaflet.css"
 import "./globals.css"
 import type { Metadata } from "next"
 import { ReactNode } from "react"
-// Importa o SessionProvider que você criou (chamado NextAuthProvider no seu código)
-import NextAuthProvider from "@/providers/SessionProvider"
+import SessionProvider from "@/providers/SessionProvider"
+import PageWrapper from "./_components/pagewrapper"
+import GlobalLoader from "./_components/GlobalLoader" // ✅ Import do Loader global
 
-// --- Importa seus componentes de Layout ---
-// Assumindo que eles estão em src/app/_components
-import { Header } from "././_components/header"
-import Footer  from "././_components/footer"
-import PageWrapper from "./_components/pagewrapper" 
-
-// Sua Metadata de Portfólio (mantida)
 export const metadata: Metadata = {
   title: "GM | DEV",
   description: "Portfólio profissional de Software Engineer.",
@@ -64,21 +57,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body>
-        {/* 1. Envolve a aplicação no Provider de Autenticação */}
-        <NextAuthProvider>
-          {/* 2. Inclui o Header */}
-          <Header />
+      <body className="bg-gray-100">
+        {/* ✅ Loader global em toda a aplicação */}
+        <GlobalLoader />
 
-          {/* 3. Usa o PageWrapper para aplicar o layout principal */}
-          <PageWrapper>
-            {/* 4. Renderiza o conteúdo da página atual (Dashboard, Login, etc.) */}
-            {children}
-          </PageWrapper>
-
-          {/* 5. Inclui o Footer */}
-          <Footer />
-        </NextAuthProvider>
+        {/* ✅ Providers e wrapper de página */}
+        <SessionProvider>
+          <PageWrapper>{children}</PageWrapper>
+        </SessionProvider>
       </body>
     </html>
   )

@@ -67,7 +67,7 @@ export function Main() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 items-center user-select: none; justify-center">
-              <AnimatedButton href="mailto:gabmoura.dev@gmail.com">
+              <AnimatedButton href="/login">
                 Cadastre-se
               </AnimatedButton>
             </div>

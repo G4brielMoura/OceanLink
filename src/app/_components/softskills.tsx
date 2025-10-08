@@ -5,12 +5,12 @@ import { useEffect, useRef } from "react"
 
 
 const hardSkills = [
-  { title: "Cadastro oficial" },
-  { title: "Regularização" },
-  { title: "Monitoramento" },
-  { title: "Gestão de horários" },
-  { title: "Suporte técnico" },
-  { title: "Sistema digital" },
+  { title: "Cadastro oficial"},
+  { title: "Catálogo de Espécie"},
+  { title: "Gestão de horários"},
+  { title: "Suporte técnico"},
+  { title: "OceanLink Company"},
+  { title: "Informações"},
 ]
 
 const fadeInVariant = (direction: "left" | "right"): Variants => ({
@@ -98,10 +98,9 @@ const Section = ({
 const SoftSkill = () => {
   return (
     <div className="bg-[#e5e5e5] w-full mb-30 select-none">
-    
       <Section
-        title="Travessantes"
-        description="Os travessantes são responsáveis por transportar pessoas e cargas com segurança através de rios e mares."
+        title="Travessantes & Pescadores"
+        description="Os pescadores dedicam-se à arte de capturar o peixe fresco que alimenta comunidades e mercados. Os travessantes são os responsáveis por levar essa produção adiante — comprando, transportando e exportando o fruto do trabalho dos mares."
         skills={hardSkills}
         isSoft={false}
       />
