@@ -1,21 +1,22 @@
 // src/app/api/auth/[...nextauth]/route.ts
-import NextAuth from "next-auth"
+import NextAuth, { AuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
-import GoogleProvider from "next-auth/providers/google" // 👈 adiciona isso
+import GoogleProvider from "next-auth/providers/google"
 import { PrismaClient } from "@prisma/client"
 import { compare } from "bcryptjs"
 
 const prisma = new PrismaClient()
 
-const handler = NextAuth({
+// ✅ Define o tipo explicitamente como AuthOptions
+export const authOptions: AuthOptions = {
   providers: [
-    // 👇 Adiciona o provider do Google
+    // 👇 Login com Google
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
 
-    // 👇 Mantém o login com e-mail e senha
+    // 👇 Login com e-mail e senha
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -23,14 +24,18 @@ const handler = NextAuth({
         password: { label: "Senha", type: "password" },
       },
       async authorize(credentials) {
+        if (!credentials?.email || !credentials.password) {
+          throw new Error("Preencha todos os campos")
+        }
+
         const user = await prisma.user.findUnique({
-          where: { email: credentials?.email },
+          where: { email: credentials.email },
         })
 
         if (!user) throw new Error("Usuário não encontrado")
 
         const senhaValida = await compare(
-          credentials!.password,
+          credentials.password,
           user.hashedPassword || ""
         )
 
@@ -46,10 +51,13 @@ const handler = NextAuth({
   },
 
   session: {
+    // ⚠️ Aqui é onde o TS reclamava. O tipo correto é "strategy: 'jwt'"
     strategy: "jwt",
   },
 
   secret: process.env.NEXTAUTH_SECRET,
-})
+}
+
+const handler = NextAuth(authOptions)
 
 export { handler as GET, handler as POST }

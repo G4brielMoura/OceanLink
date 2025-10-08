@@ -1,4 +1,3 @@
-// src/app/api/register/route.ts
 import { PrismaClient } from "@prisma/client"
 import { hash } from "bcryptjs"
 import { NextResponse } from "next/server"
@@ -37,7 +36,7 @@ export async function POST(req: Request) {
       data: {
         name,
         email,
-        hashedPassword,
+        hashedPassword, // campo correto conforme o schema.prisma
       },
     })
 
@@ -46,7 +45,7 @@ export async function POST(req: Request) {
       { status: 201 }
     )
   } catch (error) {
-    console.error(error)
+    console.error("Erro ao registrar usuário:", error)
     return NextResponse.json(
       { error: "Erro ao registrar usuário" },
       { status: 500 }

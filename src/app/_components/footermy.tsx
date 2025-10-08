@@ -88,7 +88,7 @@ export default function FooterMy() {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="w-full px-6 py-16 mt-10 bg-[#e5e5e5] text-[#0a3d62] font-sans"
+      className="w-full px-6 py-16 mt-10 bg-[#f2f3f5] text-[#0a3d62] font-sans"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-start">
         {/* Left: Form */}

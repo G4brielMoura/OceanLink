@@ -150,6 +150,12 @@ const Sidebar: React.FC = () => {
           <h2 className="text-3xl font-bold mb-6 border-b border-white/20 pb-3">
             OceanLink LTDA
           </h2>
+
+          {/* 👇 Nome movido para cima do botão Início */}
+          <p className="text-sm text-gray-300 mb-3">
+            Bem-vindo, <span className="font-semibold">{userName}</span>
+          </p>
+
           <nav className="space-y-2">
             {navItems.map(({ href, label, icon: Icon }) => (
               <Link
@@ -169,9 +175,6 @@ const Sidebar: React.FC = () => {
         </div>
 
         <div className="mt-6 border-t border-white/20 pt-4">
-          <p className="text-sm text-gray-300 mb-3">
-            Bem-vindo, <span className="font-semibold">{userName}</span>
-          </p>
           <button
             onClick={handleLogout}
             className="flex items-center gap-3 text-red-300 hover:text-red-100 hover:bg-red-700/40 p-3 rounded-lg transition-all"
@@ -200,6 +203,11 @@ const Sidebar: React.FC = () => {
             className="fixed top-[56px] left-0 w-full bg-[#0a3d62] text-white shadow-lg z-40"
           >
             <div className="flex flex-col space-y-2 p-3">
+              {/* 👇 Nome movido para o topo também no mobile */}
+              <p className="text-sm text-gray-300 mb-2">
+                Bem-vindo, <span className="font-semibold">{userName}</span>
+              </p>
+
               {navItems.map(({ href, label, icon: Icon }) => (
                 <Link
                   key={href}
@@ -216,9 +224,6 @@ const Sidebar: React.FC = () => {
                 </Link>
               ))}
               <div className="border-t border-white/20 pt-2">
-                <p className="text-sm text-gray-300 mb-2">
-                  Bem-vindo, <span className="font-semibold">{userName}</span>
-                </p>
                 <button
                   onClick={handleLogout}
                   className="flex items-center gap-3 text-red-300 hover:text-red-100 hover:bg-red-700/40 p-3 rounded-lg transition-all"

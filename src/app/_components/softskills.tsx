@@ -97,7 +97,7 @@ const Section = ({
 
 const SoftSkill = () => {
   return (
-    <div className="bg-[#e5e5e5] w-full mb-30 select-none">
+    <div className="bg-[#f2f3f5] w-full mb-30 select-none">
       <Section
         title="Travessantes & Pescadores"
         description="Os pescadores dedicam-se à arte de capturar o peixe fresco que alimenta comunidades e mercados. Os travessantes são os responsáveis por levar essa produção adiante — comprando, transportando e exportando o fruto do trabalho dos mares."

@@ -12,9 +12,6 @@ const nextConfig: NextConfig = {
     })
     return config
   },
-
-  /* config options here */
 }
 
 export default nextConfig
-// module.exports = nextConfig; // A sintaxe com `export default` já é suficiente, esta linha pode ser removida.

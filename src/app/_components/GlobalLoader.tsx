@@ -10,14 +10,14 @@ export default function GlobalLoader() {
 
   // Loader inicial (quando o site abre)
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000) // 5 segundos
+    const timer = setTimeout(() => setLoading(false), 2000)
     return () => clearTimeout(timer)
   }, [])
 
   // Loader em mudanças de rota
   useEffect(() => {
     setLoading(true)
-    const timer = setTimeout(() => setLoading(false), 1200) // 1.2s entre páginas
+    const timer = setTimeout(() => setLoading(false), 1200)
     return () => clearTimeout(timer)
   }, [pathname])
 
@@ -31,23 +31,45 @@ export default function GlobalLoader() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
         >
+          {/* Conteúdo principal do loader */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex flex-col items-center"
           >
-            <div className="text-3xl md:text-4xl font-bold mb-4">
-              🌊 OceanLink
+            {/* Desktop: exibe nome + spinner + texto */}
+            <div className="hidden sm:flex flex-col items-center">
+              <div className="relative w-12 h-12 md:w-14 md:h-14">
+                <motion.span
+                  className="absolute inset-0 rounded-full border-4 border-t-transparent border-white"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 1,
+                    ease: "linear",
+                  }}
+                />
+              </div>
+              <p className="mt-4 text-sm text-white/70">
+                Carregando conteúdo...
+              </p>
             </div>
-            <div className="relative w-12 h-12">
-              <motion.span
-                className="absolute inset-0 rounded-full border-4 border-t-transparent border-white"
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-              />
+
+            {/* Mobile: mostra apenas o spinner menor */}
+            <div className="flex sm:hidden flex-col items-center">
+              <div className="relative w-8 h-8">
+                <motion.span
+                  className="absolute inset-0 rounded-full border-4 border-t-transparent border-white"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 1,
+                    ease: "linear",
+                  }}
+                />
+              </div>
             </div>
-            <p className="mt-4 text-sm text-white/70">Carregando conteúdo...</p>
           </motion.div>
         </motion.div>
       )}
