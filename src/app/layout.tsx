@@ -7,35 +7,35 @@ import PageWrapper from "./_components/pagewrapper"
 import GlobalLoader from "./_components/GlobalLoader" // ✅ Import do Loader global
 
 export const metadata: Metadata = {
-  title: "GM | DEV",
-  description: "Portfólio profissional de Software Engineer.",
+  title: "OceanLink",
+  description: "Plataforma Para Pescadores e Travessantes.",
   metadataBase: new URL("https://softwareengineergm.vercel.app/"),
   keywords: [
-    "Portfólio",
-    "Software Engineer",
-    "Next.js",
-    "GM|DEVELOPER",
-    "Desenvolvimento",
-    "Dev",
+    "Suporte Pescaria",
+    "Pescaria Vida",
+    "Regulação Documentos",
+    "Peixes Pescaria",
+    "Maranhão",
+    "Região Ma",
   ],
   authors: [
     {
-      name: "Gabriel Moura|Dev",
-      url: "https://softwareengineergm.vercel.app/",
+      name: "OceanLink | Company",
+      url: "https://ocean-link-iema.vercel.app/",
     },
   ],
   openGraph: {
-    title: "GM | DEVELOPER | Portfólio",
+    title: "Ocean | Link | Plataforma",
     description:
-      "Portfólio com foco em Desenvolvimento Software, e performance.",
-    url: "https://gabrielmouradesigner.vercel.app",
-    siteName: "GM|DEVELOPER",
+      "Ajuda Na Pesca, Das Baixadas Ma.",
+    url: "https://ocean-link-iema.vercel.app/",
+    siteName: "OceanLInk Company",
     images: [
       {
-        url: "/images/icon_gm.svg",
+        url: "/icon/logo.png",
         width: 1200,
         height: 630,
-        alt: "Imagem de capa GMCreative",
+        alt: "Imagem de capa OceanLink",
       },
     ],
     locale: "pt_BR",
