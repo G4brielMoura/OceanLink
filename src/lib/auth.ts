@@ -1,14 +1,17 @@
-// src/lib/auth.ts
-import type { NextAuthOptions } from "next-auth"
+import { PrismaClient } from "@prisma/client"
+import { compare } from "bcryptjs"
+import { AuthOptions } from "next-auth"
+import GoogleProvider from "next-auth/providers/google"
 import CredentialsProvider from "next-auth/providers/credentials"
-import { PrismaAdapter } from "@auth/prisma-adapter"
-import { prisma } from "./prisma"
-import bcrypt from "bcryptjs"
 
-export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
+const prisma = new PrismaClient()
 
+export const authOptions: AuthOptions = {
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -16,35 +19,36 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Senha", type: "password" },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials.password) return null
+        if (!credentials?.email || !credentials?.password) {
+          throw new Error("Preencha todos os campos")
+        }
 
         const user = await prisma.user.findUnique({
           where: { email: credentials.email },
         })
 
-        if (!user) return null
+        if (!user) {
+          throw new Error("Usuário não encontrado")
+        }
 
-        // Para produção:
-        // const isMatch = await bcrypt.compare(credentials.password, user.password as string)
-        // if (!isMatch) return null
+        const senhaValida = await compare(
+          credentials.password,
+          user.hashedPassword || ""
+        )
 
-        // MVP temporário:
-        if (credentials.password !== "123456") return null
+        if (!senhaValida) {
+          throw new Error("Senha incorreta")
+        }
 
         return user
       },
     }),
   ],
-
   session: {
     strategy: "jwt",
   },
-
   pages: {
     signIn: "/login",
   },
-
-  
-
   secret: process.env.NEXTAUTH_SECRET,
 }
