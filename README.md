@@ -77,7 +77,7 @@ O sistema de autenticação usa o adaptador oficial do Prisma:
 
 ---
 
-## schema.prisma
+```## schema.prisma
 
 datasource db {
   provider = "mysql"
@@ -128,7 +128,7 @@ model VerificationToken {
   expires    DateTime
   @@unique([identifier, token])
 }
-
+```
 ---
 
 ## 🚀 Scripts de Desenvolvimento
