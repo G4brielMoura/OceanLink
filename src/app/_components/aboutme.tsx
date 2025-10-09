@@ -46,11 +46,11 @@ const About = () => {
             <br />
           </h2>
           <p className="text-lg md:text-xl leading-relaxed font-light select-none pointer-events-none tracking-wide text-[#f2f1e8]/80">
-            Acreditamos que o mar é mais do que um meio de trabalho: é um modo
-            de vida. Por isso, criamos uma plataforma dedicada a apoiar
-            pescadores e travessantes, oferecendo ferramentas de cadastro,
-            regulação e suporte que garantem mais segurança, transparência e
-            organização no dia a dia.
+            Acreditamos que o mar vai muito além de um meio de trabalho — é um
+            verdadeiro modo de vida. Por isso, desenvolvemos uma plataforma
+            voltada a valorizar e fortalecer os pescadores, oferecendo
+            ferramentas de cadastro, regulação e suporte que trazem mais
+            segurança, transparência e organização à rotina de quem vive do mar.
           </p>
         </motion.div>
 

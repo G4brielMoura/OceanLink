@@ -98,8 +98,9 @@ const SoftSkill = () => {
   return (
     <div className="bg-[#f2f3f5] w-full mb-30 select-none">
       <Section
-        title="Travessantes & Pescadores"
-        description="Os pescadores dedicam-se à arte de capturar o peixe fresco que alimenta comunidades e mercados. Os travessantes são os responsáveis por levar essa produção adiante — comprando, transportando e exportando o fruto do trabalho dos mares."
+        title="Pescadores"
+        description="Os pescadores dedicam-se com maestria à arte de capturar o peixe fresco, fruto de trabalho e tradição.
+Sua pesca sustenta comunidades inteiras e abastece mercados com sabor e vida do mar."
         skills={hardSkills}
         isSoft={false}
       />

@@ -60,16 +60,14 @@ export function Main() {
             </h2>
 
             <p className="text-[clamp(1rem,2.5vw,2rem)]  max-w-[900px] text-gray-400 user-select: none; tracking-tight leading-tight font-light text-center mb-6">
-              A Oceanlink é a plataforma que facilita a vida de quem vive do
-              mar. Oferecemos suporte completo para pescadores e travessantes,
-              com cadastro seguro, regulação transparente e soluções que
-              garantem confiança em cada travessia e em cada pesca.
+              A Oceanlink é a plataforma criada para quem tem o mar como parte
+              da própria vida. Oferecemos suporte completo aos pescadores, com
+              cadastro seguro, regulação transparente e soluções que garantem
+              confiança e tranquilidade em cada jornada no mar.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 items-center user-select: none; justify-center">
-              <AnimatedButton href="/login">
-                Cadastre-se
-              </AnimatedButton>
+              <AnimatedButton href="/login">Cadastre-se</AnimatedButton>
             </div>
           </motion.div>
         )}

@@ -25,7 +25,7 @@ const cases: CaseData[] = [
   {
     title: "Camarão",
     description:
-      "Símbolo das marés maranhenses, o camarão é um dos principais produtos da pesca e exportação. Presente em pratos tradicionais, é fonte de sustento para inúmeras famílias de pescadores e travessantes.",
+      "Símbolo das marés maranhenses, o camarão é um dos principais produtos da pesca e exportação. Presente em pratos tradicionais, é fonte de sustento para inúmeras famílias de pescadores.",
     tag: "Portfólio Profissional",
     images: ["/project/cam1.svg", "/project/cam2.svg", "/project/cam3.svg"],
 
@@ -52,7 +52,7 @@ const cases: CaseData[] = [
   {
     title: "Cavala",
     description:
-      "De corpo alongado e sabor marcante, a cavala é ideal para grelhados e defumados. É uma espécie comum nas águas costeiras do Maranhão e tem grande importância econômica para os pescadores e travessantes.",
+      "De corpo alongado e sabor marcante, a cavala é ideal para grelhados e defumados. É uma espécie comum nas águas costeiras do Maranhão e tem grande importância econômica para os pescadores.",
     tag: "Portfólio Profissional",
     images: ["/project/cav1.svg", "/project/cav2.svg", "/project/cav3.svg"],
 
@@ -97,7 +97,7 @@ const cases: CaseData[] = [
   {
     title: "Corvina",
     description:
-      "Com corpo prateado e carne de sabor suave, a corvina é uma das preferidas tanto dos consumidores quanto dos travessantes. É bastante encontrada na costa maranhense e muito usada em pratos tradicionais como caldeiradas e moquecas.",
+      "Com corpo prateado e carne de sabor suave, a corvina é uma das preferidas dos consumidores. É bastante encontrada na costa maranhense e muito usada em pratos tradicionais como caldeiradas e moquecas.",
     tag: "Portfólio Profissional",
     images: ["/project/cov1.svg", "/project/cov2.svg", "/project/cov3.svg"],
 

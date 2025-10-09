@@ -10,7 +10,7 @@ import Image from "next/image"
 const links = [
   { href: "/", label: "HOME" },
   { href: "/about", label: "QUEM SOMOS" },
-  { href: "/skills", label: "SERVIÇOS & PRODUTOS" },
+  { href: "/skills", label: "SERVIÇOS" },
   { href: "/contato", label: "SUPORTE" },
   { href: "/catalogo", label: "CATÁLOGO" },
 
