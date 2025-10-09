@@ -215,6 +215,10 @@ Esse projeto está sob a licença [MIT](./LICENSE).
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-brightgreen.svg" />
 </a>
 
+---
 
+### 📌 Deploy
+
+[![Ver no Navegador](https://img.shields.io/badge/👀%20Ver%20Projeto%20Online-000?style=for-the-badge&logo=vercel&logoColor=white)](https://ocean-link-iema.vercel.app/)
 
 ---
