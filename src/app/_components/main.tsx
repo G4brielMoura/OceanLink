@@ -10,7 +10,7 @@ export function Main() {
     margin: "-20% 0px -20% 0px",
   })
 
-  const texts = ["Pescadores", "Travessantes",]
+  const texts = ["Pescadores", "Company",]
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
