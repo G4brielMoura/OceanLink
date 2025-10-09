@@ -5,7 +5,6 @@ import { ReactNode } from "react"
 import SessionProvider from "@/providers/SessionProvider"
 import PageWrapper from "./_components/pagewrapper"
 import GlobalLoader from "./_components/GlobalLoader" // ✅ Import do Loader global
-
 export const metadata: Metadata = {
   title: "OceanLink",
   description: "Plataforma Para Pescadores e Travessantes.",
@@ -53,7 +52,6 @@ export const metadata: Metadata = {
     },
   },
 }
-
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
